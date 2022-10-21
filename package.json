@@ -1,0 +1,70 @@
+{
+  "name": "lost-found-api",
+  "version": "1.0.0",
+  "description": "My app provides a REST API for managing users and their items to serve up the best user experience.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=dev nodemon ./src/server.ts",
+    "clean": "rimraf build/",
+    "build": "yarn clean && npx tsc",
+    "start": "npm run build && cross-env NODE_ENV=prod node build/server.js",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "eslint . --ext .ts",
+    "test": "cross-env NODE_ENV=dev npx tsc && jasmine"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "author": "Mohamed Yasser",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mohamed475/lost-found-api/issues"
+  },
+  "homepage": "https://github.com/Mohamed475/lost-found-api#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "express-rate-limit": "^6.6.0",
+    "helmet": "^6.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.5-lts.1",
+    "sharp": "^0.31.1",
+    "uuid": "^9.0.0",
+    "validator": "^13.7.0"
+  },
+  "keywords": [],
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.0",
+    "@types/cors": "^2.8.12",
+    "@types/express": "^4.17.13",
+    "@types/jasmine": "^3.10.2",
+    "@types/jsonwebtoken": "^8.5.9",
+    "@types/mongoose": "^5.11.97",
+    "@types/multer": "^1.4.7",
+    "@types/node": "^17.0.5",
+    "@types/pg": "^8.6.5",
+    "@types/sharp": "^0.31.0",
+    "@types/supertest": "^2.0.11",
+    "@types/uuid": "^8.3.4",
+    "@types/validator": "^13.7.7",
+    "@typescript-eslint/eslint-plugin": "^5.37.0",
+    "@typescript-eslint/parser": "^5.37.0",
+    "cross-env": "^7.0.3",
+    "dotenv": "^16.0.3",
+    "eslint": "^8.23.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "jasmine": "^4.4.0",
+    "jasmine-spec-reporter": "^7.0.0",
+    "jasmine-ts": "^0.4.0",
+    "nodemon": "^2.0.15",
+    "prettier": "^2.5.1",
+    "rimraf": "^3.0.2",
+    "supertest": "^6.2.4",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.5.2",
+    "yarn": "^1.22.19"
+  }
+}
