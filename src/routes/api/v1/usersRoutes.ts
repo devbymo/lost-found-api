@@ -20,7 +20,7 @@ userRoutes.post('/avatar', auth, upload.single('avatar'), uploadAvatar)
 userRoutes.post('/authenticate', authenticate)
 userRoutes.post('/signup', create)
 userRoutes.patch('/:id', auth, update)
-userRoutes.delete('/:id', auth, remove)
 userRoutes.delete('/avatar', auth, removeAvatar)
+userRoutes.delete('/:id', auth, remove)
 
 export default userRoutes
