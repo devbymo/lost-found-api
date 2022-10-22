@@ -82,7 +82,7 @@ const index = async (req: Request, res: Response, next: NextFunction) => {
           return {
             ...item.toObject({ getters: true }),
             image: `${
-              process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
+              process.env.NODE_ENV === 'prod' ? process.env.PROD_URL : process.env.DEV_URL
             }/api/v1/items/${item.id}/image`,
           }
         }),

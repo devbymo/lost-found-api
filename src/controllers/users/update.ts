@@ -99,7 +99,7 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
       city: updatedUser.city,
       country: updatedUser.country,
       avatar: `${
-        process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
+        process.env.NODE_ENV === 'prod' ? process.env.PROD_URL : process.env.DEV_URL
       }/api/v1/users/${updatedUser.id}/avatar`,
     }
     res.status(200).json({
