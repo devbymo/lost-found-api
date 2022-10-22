@@ -26,6 +26,8 @@ The following endpoints are used to manage items:
 - `PATCH /api/v1/items/:id` - Update item ✅
 - `DELETE /api/v1/items/:id` - Delete item ✅
 
+### Users endpoints documentation
+
 - `POST /api/v1/users/signup` - Create a new user
 
   - Authorization: None
@@ -236,6 +238,8 @@ The following endpoints are used to manage items:
 
   - Response body:
     - `image`
+
+### Items endpoints documentation
 
 - `GET /api/v1/items` - Get all items
 
