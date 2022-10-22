@@ -34,20 +34,33 @@ const create = async (req: AuthRequest, res: Response, next: NextFunction) => {
   }
 
   // Validate category
-  const validCategories = ['mobile', 'laptop', 'keys', 'id', 'document', 'money', 'other']
+  const validCategories = [
+    'mobile',
+    'laptop',
+    'keys',
+    'id',
+    'document',
+    'money',
+    'tablet',
+    'watch',
+    'camera',
+    'other',
+  ]
   if (!validator.isIn(category.toLowerCase(), validCategories)) {
     return next(new HttpError(`Invalid category passed, valid categories ${validCategories}`, 400))
   }
 
   // Validate country
-  if (!validator.isLength(country, { min: 2, max: 50 })) {
+  if (!validator.isLength(country, { min: 2, max: 20 })) {
     return next(new HttpError('Country must be at least 2 characters', 400))
   }
 
   // Validate city
-  if (!validator.isLength(city, { min: 2, max: 50 })) {
+  if (!validator.isLength(city, { min: 2, max: 20 })) {
     return next(new HttpError('City must be at least 2 characters', 400))
   }
+
+  // Validate description
   if (description && !validator.isLength(description, { min: 10, max: 200 })) {
     return next(new HttpError('Description must be at least 10 characters', 400))
   }
@@ -91,7 +104,7 @@ const create = async (req: AuthRequest, res: Response, next: NextFunction) => {
         item: {
           ...item.toObject({ getters: true }),
           image: `${
-            process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL
+            process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
           }/api/v1/items/${item.id}/image`,
         },
       },

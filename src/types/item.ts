@@ -1,3 +1,5 @@
+import { ClientSession } from 'mongoose'
+
 type Item = {
   id: string
   name: string
@@ -8,9 +10,10 @@ type Item = {
   city: string
   country: string
   image?: Buffer
+  createdAt: Date
   toObject(arg0: { getters: boolean }): unknown
   save(): unknown
-  remove(arg0: { session: import('mongodb').ClientSession }): unknown
+  remove(arg0: { session: ClientSession }): unknown
 }
 
 export default Item

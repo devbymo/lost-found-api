@@ -49,7 +49,7 @@ const uploadImage = async (req: AuthRequest, res: Response, next: NextFunction) 
       message: 'Image uploaded successfully',
       data: {
         image: `${
-          process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL
+          process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
         }/api/v1/items/${item.id}/image`,
       },
     })

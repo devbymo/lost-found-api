@@ -35,7 +35,7 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
   }
 
   // Validate name if it is passed
-  if (name && !validator.isLength(name, { min: 3, max: 50 })) {
+  if (name && !validator.isLength(name, { min: 3, max: 20 })) {
     return next(new HttpError('Name must be at least 3 characters', 400))
   }
 
@@ -99,7 +99,7 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
       city: updatedUser.city,
       country: updatedUser.country,
       avatar: `${
-        process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL
+        process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
       }/api/v1/users/${updatedUser.id}/avatar`,
     }
     res.status(200).json({

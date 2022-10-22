@@ -42,7 +42,18 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
   }
 
   // Validate category
-  const validCategories = ['mobile', 'laptop', 'keys', 'id', 'document', 'money', 'other']
+  const validCategories = [
+    'mobile',
+    'laptop',
+    'keys',
+    'id',
+    'document',
+    'money',
+    'tablet',
+    'watch',
+    'camera',
+    'other',
+  ]
   if (category && !validator.isIn(category, validCategories)) {
     return next(
       new HttpError(`Invalid category passed, valid categories [${validCategories}]`, 400)
@@ -50,12 +61,12 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
   }
 
   // Validate the city
-  if (city && !validator.isLength(city, { min: 2, max: 50 })) {
+  if (city && !validator.isLength(city, { min: 2, max: 20 })) {
     return next(new HttpError('Invalid city', 422))
   }
 
   // Validate the country
-  if (country && !validator.isLength(country, { min: 2, max: 50 })) {
+  if (country && !validator.isLength(country, { min: 2, max: 20 })) {
     return next(new HttpError('Invalid country', 422))
   }
 
@@ -99,8 +110,9 @@ const update = async (req: AuthRequest, res: Response, next: NextFunction) => {
       city: item.city,
       creator: item.creator,
       image: `${
-        process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL
+        process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
       }/api/v1/items/${item.id}/image`,
+      createdAt: item.createdAt,
     }
     res.status(200).json({
       status: 'success',

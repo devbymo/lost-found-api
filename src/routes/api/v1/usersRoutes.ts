@@ -13,14 +13,14 @@ import getAvatar from '../../../controllers/users/getAvatar'
 
 const userRoutes = Router()
 
-userRoutes.post('/avatar', auth, upload.single('avatar'), uploadAvatar)
-userRoutes.delete('/avatar', auth, removeAvatar)
 userRoutes.get('/:id/avatar', getAvatar)
-userRoutes.get('/', index)
-userRoutes.post('/signup', create)
 userRoutes.get('/:id', show)
+// userRoutes.get('/', index) For testing purposes
+userRoutes.post('/avatar', auth, upload.single('avatar'), uploadAvatar)
+userRoutes.post('/authenticate', authenticate)
+userRoutes.post('/signup', create)
 userRoutes.patch('/:id', auth, update)
 userRoutes.delete('/:id', auth, remove)
-userRoutes.post('/authenticate', authenticate)
+userRoutes.delete('/avatar', auth, removeAvatar)
 
 export default userRoutes

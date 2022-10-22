@@ -55,15 +55,9 @@ const indexByUser = async (req: Request, res: Response, next: NextFunction) => {
       data: {
         items: items.map((item) => {
           return {
-            id: item.id,
-            name: item.name,
-            category: item.category,
-            description: item.description,
-            country: item.country,
-            city: item.city,
-            creator: item.creator,
+            ...item.toObject({ getters: true }),
             image: `${
-              process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL
+              process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
             }/api/v1/items/${item.id}/image`,
           }
         }),

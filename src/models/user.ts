@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Country is required'],
       minLength: [2, 'Country must be at least 2 characters'],
-      maxLength: [50, 'Country must be less than 50 characters'],
+      maxLength: [20, 'Country must be less than 20 characters'],
       trim: true,
       toLowerCase: true,
     },
@@ -31,7 +31,7 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'City is required'],
       minLength: [2, 'City must be at least 2 characters'],
-      maxLength: [50, 'City must be less than 50 characters'],
+      maxLength: [20, 'City must be less than 20 characters'],
       trim: true,
       toLowerCase: true,
     },
@@ -39,7 +39,6 @@ const userSchema = new mongoose.Schema(
       type: String,
       required: [true, 'Password is required'],
       minLength: [4, 'Password must be at least 4 characters'],
-      maxLength: [90, 'Password must be less than 50 characters'],
     },
     items: [
       {

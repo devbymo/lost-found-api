@@ -27,17 +27,17 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
   }
 
   // Validate name
-  if (!validator.isLength(name, { min: 2, max: 50 })) {
+  if (!validator.isLength(name, { min: 2, max: 20 })) {
     return next(new HttpError('Name must be at least 2 characters', 400))
   }
 
   // Validate city if passed
-  if (city && !validator.isLength(city, { min: 2, max: 50 })) {
+  if (city && !validator.isLength(city, { min: 2, max: 20 })) {
     return next(new HttpError('City must be at least 2 characters', 400))
   }
 
   // Validate country if passed
-  if (country && !validator.isLength(country, { min: 2, max: 50 })) {
+  if (country && !validator.isLength(country, { min: 2, max: 20 })) {
     return next(new HttpError('Country must be at least 2 characters', 400))
   }
 
@@ -76,7 +76,9 @@ const create = async (req: Request, res: Response, next: NextFunction) => {
       phoneNumber: user.phoneNumber,
       city: user.city,
       country: user.country,
-      avatar: `${process.env.NODE_ENV === 'env' ? process.env.DEV_URL : process.env.PROD_URL}/api/v1/users/${user.id}/avatar`,
+      avatar: `${
+        process.env.NODE_ENV === 'dev' ? process.env.DEV_URL : process.env.PROD_URL
+      }/api/v1/users/${user.id}/avatar`,
     }
     res.status(201).json({
       status: 'success',
