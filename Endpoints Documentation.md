@@ -1,5 +1,7 @@
 ## Endpoints
 
+- API endpoints is live at `https://lost-found-api.onrender.com` for testing.
+
 ### Users
 
 The following endpoints are used to manage users:
