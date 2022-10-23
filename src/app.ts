@@ -16,8 +16,19 @@ app.use(express.json())
 
 // CORS
 const corsOptions = {
-  origin: process.env.CORS_ORIGIN || '*',
-  optionsSuccessStatus: 200,
+  origin: '*', // TODO: Change this to the client's URL in production
+
+  // Access-Control-Allow-Credentials
+  credentials: true,
+
+  // Access-Control-Allow-Methods
+  methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+
+  // Access-Control-Allow-Headers
+  allowedHeaders: 'Content-Type,Authorization,X-Requested-With,Accept',
+
+  // Access-Control-Expose-Headers
+  exposedHeaders: 'Content-Length,Content-Range',
 }
 app.use(cors(corsOptions))
 
