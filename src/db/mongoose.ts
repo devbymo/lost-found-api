@@ -14,7 +14,6 @@ if (NODE_ENV === 'test') {
 } else {
   DB_HOST = process.env.DB_HOST_PROD
 }
-console.log(DB_HOST)
 const url = `mongodb+srv://${DB_USER}:${DB_PASSWORD}@cluster0.uz8vm7a.mongodb.net/${DB_HOST}?retryWrites=true&w=majority`
 
 const connectMongoDB = async () => {

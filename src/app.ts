@@ -6,6 +6,7 @@ import error from './middlewares/error'
 import helmet from 'helmet'
 import cors from 'cors'
 import rateLimit from 'express-rate-limit'
+import index from './controllers/items'
 
 dotenv.config()
 
@@ -53,6 +54,7 @@ app.use(limiter)
 
 // API Routes
 app.use('/api', routes)
+app.get('/', index)
 
 // Route not found
 app.use(routeNotFound)

@@ -10,6 +10,7 @@
     "start": "npm run build && cross-env NODE_ENV=prod node build/server.js",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "eslint . --ext .ts",
+    "jasmine": "jasmine",
     "test": "cross-env NODE_ENV=test npx tsc && jasmine"
   },
   "repository": {
