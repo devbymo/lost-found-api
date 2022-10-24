@@ -28,9 +28,9 @@ The following endpoints are used to manage items:
 - `PATCH /api/v1/items/:id` - Update item ✅
 - `DELETE /api/v1/items/:id` - Delete item ✅
 
-### Users endpoints documentation
+### Users endpoints documentation is live at `https://lost-found-api.onrender.com` for testing.
 
-- `POST /api/v1/users/signup` - Create a new user
+- `POST /api/v1/users/signup` - Create a new user 📌✅
 
   - Authorization: None
 
@@ -80,7 +80,7 @@ The following endpoints are used to manage items:
         - `country`
         - `avatar`
 
-- `POST /api/v1/users/authenticate` - Authenticate a user
+- `POST /api/v1/users/authenticate` - Authenticate a user 📌✅
 
   - Authorization: None
 
@@ -115,7 +115,7 @@ The following endpoints are used to manage items:
         - `country`
         - `avatar`
 
-- `GET /api/v1/users/:id` - Show a user
+- `GET /api/v1/users/:id` - Show a user 📌✅
 
   - Authorization: None
 
@@ -137,7 +137,7 @@ The following endpoints are used to manage items:
         - `country`
         - `avatar`
 
-- `PATCH /api/v1/users/:id` - Update a user
+- `PATCH /api/v1/users/:id` - Update a user 📌✅
 
   - Authorization: `Bearer token`
 
@@ -187,7 +187,7 @@ The following endpoints are used to manage items:
         - `country`
         - `avatar`
 
-- `DELETE /api/v1/users/:id` - Delete a user
+- `DELETE /api/v1/users/:id` - Delete a user 📌✅
 
   - Authorization: `Bearer token`
 
@@ -199,7 +199,7 @@ The following endpoints are used to manage items:
       - Type: `string`
       - Example: `User deleted successfully`
 
-- `POST /api/v1/users/avatar` - Upload user avatar
+- `POST /api/v1/users/avatar` - Upload user avatar 📌✅
 
   - Authorization: `Bearer token`
 
@@ -222,7 +222,7 @@ The following endpoints are used to manage items:
         - Type: `string`
         - Example: `https://yourdomain.com/api/v1/users/6351f0b8ae4d15d6d911b417/avatar`
 
-- `DELETE /api/v1/users/avatar` - Delete user avatar
+- `DELETE /api/v1/users/avatar` - Delete user avatar 📌✅
 
   - Authorization: `Bearer token`
 
@@ -234,16 +234,16 @@ The following endpoints are used to manage items:
       - Type: `string`
       - Example: `Image removed successfully`
 
-- `GET /api/v1/users/:id/avatar` - Get user avatar
+- `GET /api/v1/users/:id/avatar` - Get user avatar 📌✅
 
   - Authorization: `Bearer token`
 
   - Response body:
     - `image`
 
-### Items endpoints documentation
+### Items endpoints documentation is live at `https://lost-found-api.onrender.com` for testing.
 
-- `GET /api/v1/items` - Get all items
+- `GET /api/v1/items` - Get all items 📌✅
 
   - Note: This endpoint is paginated & supports sorting, filtering, and searching (very generic)
 
@@ -314,7 +314,7 @@ The following endpoints are used to manage items:
         - `createdAt`
         - `updatedAt`
 
-- `GET /api/v1/items/:id` - Show item
+- `GET /api/v1/items/:id` - Show item 📌✅
 
   - Authorization: none
 
@@ -338,7 +338,7 @@ The following endpoints are used to manage items:
         - `createdAt`
         - `updatedAt`
 
-- `POST /api/v1/items` - Create item
+- `POST /api/v1/items` - Create item 📌✅
 
   - Authorization: `Bearer token`
 
@@ -394,7 +394,7 @@ The following endpoints are used to manage items:
         - `createdAt`
         - `updatedAt`
 
-- `PATCH /api/v1/items/:id` - Update item
+- `PATCH /api/v1/items/:id` - Update item 📌✅
 
   - Authorization: `Bearer token`
 
@@ -450,7 +450,7 @@ The following endpoints are used to manage items:
         - `country`
         - `createdAt`
 
-- `DELETE /api/v1/items/:id` - Delete item
+- `DELETE /api/v1/items/:id` - Delete item 📌✅
 
   - Authorization: `Bearer token`
 
@@ -462,7 +462,7 @@ The following endpoints are used to manage items:
       - Type: `string`
       - Example: `Item deleted successfully`
 
-- `POST /api/v1/items/:id/image` - Upload item image
+- `POST /api/v1/items/:id/image` - Upload item image 📌✅
 
   - Authorization: `Bearer token`
 
@@ -484,7 +484,7 @@ The following endpoints are used to manage items:
     - `data`
       - `Image`
 
-- `GET /api/v1/items/:id/image` - Get item image
+- `GET /api/v1/items/:id/image` - Get item image 📌✅
 
   - Authorization: none
 
@@ -492,7 +492,7 @@ The following endpoints are used to manage items:
     - `data`
       - `Image`
 
-- `GET /api/v1/items/user/:id` - Get user items
+- `GET /api/v1/items/user/:id` - Get user items 📌✅
 
   - EX:
 
